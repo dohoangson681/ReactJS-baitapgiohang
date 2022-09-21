@@ -20,6 +20,11 @@ export default class ProductItem extends Component {
             {/* Add to cart */}
             {text }
           </a>
+          <a onClick={()=>{
+            this.props.detailSP(this.props.shoes) ; 
+          }} data-toggle="modal" data-target="#modalDetail" href="#!" className="ml-3 btn btn-primary">
+           Details
+          </a>
         </div>
       </div>
     );

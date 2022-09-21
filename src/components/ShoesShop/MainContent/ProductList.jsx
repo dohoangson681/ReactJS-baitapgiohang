@@ -6,7 +6,7 @@ export default class ProductList extends Component {
     return (
       <div className="row container mx-auto my-4">
         {this.props.shoesdata.map((shoes) => {
-            return <ProductItem addToCart = {this.props.addToCart} gioHang = {this.props.gioHang} key = {shoes.alias} shoes = {shoes} />
+            return <ProductItem detailSP = {this.props.detailSP} addToCart = {this.props.addToCart} gioHang = {this.props.gioHang} key = {shoes.alias} shoes = {shoes} />
         })}
       </div>
     )

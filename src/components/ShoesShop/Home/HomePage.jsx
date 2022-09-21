@@ -5,9 +5,8 @@ import shoesdata from '../../../data/shoes.json' ;
 
 export default class HomePage extends Component {
     state = {
-        gioHang : [
-            {...shoesdata[0] , soLuong : 1 , inCart : true } , 
-        ] 
+        gioHang : []  , 
+        currentProduct : {} , 
     }
     // them san pham vao gio hang
     addToCart = (spGH) => {
@@ -64,6 +63,11 @@ export default class HomePage extends Component {
             gioHang : gioHangMoi , 
         })
     }
+    detailSP = (spGH) => {
+        this.setState({
+            currentProduct : spGH , 
+        })
+    }
   render() {
     let tongSP = 0 ;
     this.state.gioHang.map((sp)=>{
@@ -76,7 +80,7 @@ export default class HomePage extends Component {
     return (
       <div>
         <Header tongPrice = {tongPrice} tangGiamSP = {this.tangGiamSP} deleteSP = {this.deleteSP} tongSP = {tongSP} gioHang = {this.state.gioHang} />
-        <MainContent gioHang = {this.state.gioHang} shoesdata = {shoesdata} addToCart = {this.addToCart} />
+        <MainContent detailSP = {this.detailSP} currentProduct = {this.state.currentProduct} gioHang = {this.state.gioHang} shoesdata = {shoesdata} addToCart = {this.addToCart} />
       </div>
     )
   }
